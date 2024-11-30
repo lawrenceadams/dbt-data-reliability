@@ -16,6 +16,7 @@ on:
           - spark
           - athena
           - trino
+          - duckdb
       elementary-ref:
         type: string
         required: false

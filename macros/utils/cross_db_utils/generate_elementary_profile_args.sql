@@ -68,6 +68,16 @@
   ]) %}
 {% endmacro %}
 
+{% macro duckdb__generate_elementary_profile_args(method, elementary_database, elementary_schema) %}
+  {% do return([
+    _parameter("type", target.type),
+    _parameter("path", target.path),
+    _parameter("threads", target.threads),
+    _parameter("dbname", elementary_database),
+    _parameter("schema", elementary_schema),
+  ]) %}
+{% endmacro %}
+
 {% macro databricks__generate_elementary_profile_args(method, elementary_database, elementary_schema) %}
   {% set parameters = [
     _parameter("type", target.type),

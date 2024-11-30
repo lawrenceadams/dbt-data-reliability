@@ -3,7 +3,7 @@
     {{ return(adapter.dispatch('get_columns_from_information_schema', 'elementary')(database_name, schema_name, table_name)) }}
 {% endmacro %}
 
-{# Snowflake #}
+{# Snowflake, DuckDB #}
 {% macro default__get_columns_from_information_schema(database_name, schema_name, table_name = none) %}
     {% set schema_relation = api.Relation.create(database=database_name, schema=schema_name).without_identifier() %}
     {% set column_relation = schema_relation.information_schema('COLUMNS') %}
